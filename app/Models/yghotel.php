@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class yghotel extends Model
 {
-    use HasFactory;
+    protected $fillable = ['jenis_kamar','nama_kamar','kapasitas','jumlah_kamar','keterangan','harga'];
 }

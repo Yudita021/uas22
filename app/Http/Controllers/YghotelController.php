@@ -6,5 +6,49 @@ use Illuminate\Http\Request;
 
 class YghotelController extends Controller
 {
+    public function indexkamar(){
+        $room = Yghotel::all();
+        return view('admin.kamar', compact('room'));
+    }
+
+    public function createkamar(){
+        return view('admin.create');
+    }
+
+    public function storekamar(Request $request){
+        $request->validate([
+            'jenis_kamar'=>'required',
+            'nama_kamar'=>'required',
+            'jumlah_kamar'=>'required',
+            'kapasitas'=>'required',
+            'harga'=>'required',
+            'keterangan'=>'required'
+        ]);
+        Yghotel::create($request->all());
+        return redirect('admin/kamar');
+    }
+
+    public function editkamar(Yghotel $room){
+        return view('admin.edit', compact('room')) ;
+    }
     
+    public function updatekamar(Request $request, Yghotel $room)
+    {
+        $room->replicate([
+            'jenis_kamar'=>'required',
+            'nama_kamar'=>'required',
+            'jumlah_kamar'=>'required',
+            'kapasitas'=>'required',
+            'harga'=>'required',
+            'keterangan'=>'required'
+        ]);
+        $room->update($request->all());
+        return redirect('admin/kamar') ;
+    }
+
+    public function destroy(Yghotel $room)
+    {
+        $room->delete();
+        return redirect('admin/kamar');
+    }
 }

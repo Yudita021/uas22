@@ -1,5 +1,5 @@
 @extends('admin.tema._main')
-@section('judul', 'Book Hotel')
+@section('judul', 'Dashboard')
 @section('isi')
 <div class="row mt-2">
     <div class="col-12">
