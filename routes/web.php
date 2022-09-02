@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\YghotelController;
+use app\Http\Controllers\PesananController;
+use app\Http\Controllers\PelangganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin', 'App\Http\Controllers\PesananController@indexadmin');

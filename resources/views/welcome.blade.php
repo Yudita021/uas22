@@ -45,9 +45,9 @@
           <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
           <li><a class="nav-link scrollto" href="#services">Fasilitas</a></li>
           <li><a class="nav-link scrollto " href="#work">Portofolio</a></li>
-          <li><a class="nav-link scrollto " href="#blog">Award</a></li>
+          <li><a class="nav-link scrollto " href="#blog">KAMAR</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="nav-link scrollto" href="yghotel/order">BOOK NOW</a></li>
+          <li><a class="" href="admin/dashboard">Admin Page</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -475,10 +475,10 @@
           <div class="col-sm-12">
             <div class="title-box text-center">
               <h3 class="title-a">
-                Award
+                Kelas Kamar
               </h3>
               <p class="subtitle-a">
-                Berbagai pencapaian Hotel.
+                Ada 3 Pilihan Kamar yaitu VVIP, VIP dan Reguler
               </p>
               <div class="line-mf"></div>
             </div>
@@ -493,7 +493,7 @@
               <div class="card-body">
                 <div class="card-category-box">
                   <div class="card-category">
-                    <h6 class="category">Panorama Award</h6>
+                    <a href="yghotel/vvip" class="btn btn-sm" type="button" ><h6 class="category">Klik Untuk Pesan VVIP CLASS</h6></a>
                   </div>
                 </div>
                 
@@ -512,7 +512,7 @@
               <div class="card-body">
                 <div class="card-category-box">
                   <div class="card-category">
-                    <h6 class="category">Food and Beverage Award</h6>
+                    <a href="yghotel/vvip" class="btn btn-sm" type="button" ><h6 class="category">Klik Untuk Pesan VIP CLASS</h6></a>
                   </div>
                 </div>
                 <p class="card-description">
@@ -530,7 +530,7 @@
               <div class="card-body">
                 <div class="card-category-box">
                   <div class="card-category">
-                    <h6 class="category">Staff Award</h6>
+                    <a href="yghotel/vvip" class="btn btn-sm" type="button" ><h6 class="category">Klik Untuk Pesan Reguler CLASS</h6></a>
                   </div>
                 </div>
                 
