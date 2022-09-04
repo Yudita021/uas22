@@ -16,13 +16,17 @@ class CreatePesanansTable extends Migration
         Schema::create('pesanans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_kamar')->nullable();
-            $table->unsignedBigInteger('id_pelanggan')->nullable();
             $table->date('checkin');
             $table->date('checkout');
             $table->integer('jumlah_kamar');
             $table->integer('jumlah_orang');
             $table->integer('total_harga');
             $table->string('pesan');
+            $table->string('id_pelanggan');
+            $table->string('nama', 50);
+            $table->string('no_hp', 20);
+            $table->string('email', 50);
+            $table->text('alamat');
             $table->timestamps();
         });
         
@@ -30,16 +34,8 @@ class CreatePesanansTable extends Migration
             $table->foreign('id_kamar')
             ->references('id_kamar')
             ->on('yghotels')
-            ->onDelete('cascade');
-
-            $table->foreign('id_pelanggan')
-            ->references('id_pelanggan')
-            ->on('pelanggans')
-            ->onDelete('cascade');
-
-            
+            ->onDelete('cascade');              
             $table->dropForeign(['id_kamar']);
-            $table->dropForeign(['id_pelanggan']);
         });
     }
 

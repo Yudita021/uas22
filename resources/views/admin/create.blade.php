@@ -29,7 +29,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="">Jenis Kamar</label>
-                                <input type="dropdown" name="jenis_kamar" class="form-control">
+                                <input type="text" name="jenis_kamar" class="form-control">
                             </div>
     
                             <div class="form-group">

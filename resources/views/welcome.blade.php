@@ -47,7 +47,7 @@
           <li><a class="nav-link scrollto " href="#work">Portofolio</a></li>
           <li><a class="nav-link scrollto " href="#blog">KAMAR</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="" href="admin/dashboard">Admin Page</a></li>
+          <li><a class="" href="/admin">Admin Page</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -65,7 +65,7 @@
           <img src="assets/img/logo-1.png" alt="">
           <h1 class="hero-title mb-4">Welcome to YG Hotel</h1>
           <p class="hero-subtitle"><span class="typed" data-typed-items="Hotel Terbaik, Hotel Elegan, Hotel Ternyaman"></span></p>
-          <p class="pt-3"><a class="btn btn-light btn-lg js-scroll px-4" href="yghotel/order" role="button">PESAN SEKARANG</a></p>
+          <p class="pt-3"><a class="btn btn-light btn-lg js-scroll px-4" href="/order" role="button">PESAN SEKARANG</a></p>
         </div>
       </div>
     </div>
@@ -475,10 +475,10 @@
           <div class="col-sm-12">
             <div class="title-box text-center">
               <h3 class="title-a">
-                Kelas Kamar
+                Kamar
               </h3>
               <p class="subtitle-a">
-                Ada 3 Pilihan Kamar yaitu VVIP, VIP dan Reguler
+                Ada banyak pilihan kamar mewah harga bersahabat
               </p>
               <div class="line-mf"></div>
             </div>
@@ -618,7 +618,7 @@
                         <li><a href="https://www.instagram.com/yudita_pratama"><span class="ico-circle"><i class="bi bi-instagram"></i></span></a></li>
                         <li><a href="https://www.twitter.com/yudita_p"><span class="ico-circle"><i class="bi bi-twitter"></i></span></a></li>
                         <li><a href="https://github.com/Yudita021/"><span class="ico-circle"><i class="bi bi-github"></i></span></a></li>
-                        <a href="yghotel/order" type="submit" class="btn btn-lg btn-dark">BOOK NOW</a>
+                        <a href="/order" type="submit" class="btn btn-lg btn-dark">BOOK NOW</a>
                       </ul>
                     </div>
                   </div>
