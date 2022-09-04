@@ -485,62 +485,20 @@
           </div>
         </div>
         <div class="row">
+          @foreach($room as $kamar)
           <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="assets/img/post-1.jpg"><img src="assets/img/post-1.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <a href="yghotel/vvip" class="btn btn-sm" type="button" ><h6 class="category">Klik Untuk Pesan VVIP CLASS</h6></a>
-                  </div>
+            <div class="work-box">
+              <a href="{{ asset('storage/' . $kamar->image) }}" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="{{ asset('storage/' . $kamar->image) }}" alt="" class="img-fluid">
                 </div>
-                
-                <p class="card-description">
-                 Memenangkan kontes panorama hotel di seluruh dunia
-                </p>
-              </div>
+              </a>
               
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="assets/img/post-2.jpg"><img src="assets/img/post-2.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <a href="yghotel/vvip" class="btn btn-sm" type="button" ><h6 class="category">Klik Untuk Pesan VIP CLASS</h6></a>
-                  </div>
-                </div>
-                <p class="card-description">
-                 Memenangkan beragam kontes Food and Beverage di seluruh dunia
-                </p>
-              </div>
+          @endforeach
              
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="assets/img/post-3.jpg"><img src="assets/img/post-3.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <a href="yghotel/vvip" class="btn btn-sm" type="button" ><h6 class="category">Klik Untuk Pesan Reguler CLASS</h6></a>
-                  </div>
-                </div>
-                
-                <p class="card-description">
-                  Memenangkan piagam penghargaan staff paling berkompeten di seluruh dunia
-                </p>
-              </div>
-             
-            </div>
-          </div>
+            
         </div>
       </div>
     </section><!-- End Blog Section -->

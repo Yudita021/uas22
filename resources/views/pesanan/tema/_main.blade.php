@@ -23,7 +23,7 @@
                       <a class="nav-link" aria-current="page" href="/order">Pemesanan</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="order/view">Daftar Booking</a>
+                      <a class="nav-link" href="/order/view">Daftar Booking</a>
                     </li>
                   </ul>
                   <i class="bi bi-list mobile-nav-toggle"></i>

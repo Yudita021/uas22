@@ -27,7 +27,7 @@
                     </li>
                     
                     <li class="nav-item">
-                      <a class="nav-link">Log Out</a>
+                      <a class="nav-link" href="/">Log Out</a>
                     </li>
                   </ul>
                   <i class="bi bi-list mobile-nav-toggle"></i>

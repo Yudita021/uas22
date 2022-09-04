@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <a href="admin">
+      
       <div class="row">
 
         @foreach($room as $kamar)
@@ -25,7 +25,7 @@
         <div class="col-md-4">
           <div class="card card-blog">
             <div class="card-img">
-              <a href="blog-single.html">
+              <a href="{{ route('edit.edit', $kamar->id) }}">
                 @if ($kamar->image)
                 <img src="{{ asset('storage/' . $kamar->image) }}" alt="" class="img-fluid">
                 @else
@@ -43,16 +43,17 @@
                   
                 </div>
               </div>
-              <h3 class="card-title"><a class="text-decoration-none" href="blog-single.html">{{ $kamar->nama_kamar }}</a></h3>
+              <h3 class="card-title"><a class="text-decoration-none" href="{{ route('edit.edit', $kamar->id) }}">{{ $kamar->nama_kamar }}</a></h3>
               <p class="card-description">
                 {{$kamar->keterangan}}
               </p>
+              <a href="{{ route('edit.edit', $kamar->id) }}" type="button" class="btn btn-sm btn-warning text-center"><i class="fa-solid fa-edit"></i></a>
             </div>
             
           </div>
         </div>
         @endforeach
-    </div></a>
+    </div>
 </div>
 </section>
 

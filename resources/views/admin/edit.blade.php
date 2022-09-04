@@ -6,7 +6,7 @@
     <div class="col-12">
     
         <div class="card">
-          <div class="card-header"><b>TAMBAH DATA KAMAR</b>
+          <div class="card-header"><b>Edit DATA KAMAR</b>
           {{-- <a href="" class="btn btn-sm ms-2 float-right btn-primary"><i class="fa-solid fa-square-plus"></i> TAMBAH DATA SOAL</a> --}}
           </div>
          

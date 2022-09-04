@@ -15,14 +15,14 @@ class PesananController extends Controller
     }
 
     public function indexorder(){
-        $order = Pesanan::join('yghotels','yghotels.id','=','pesanans.id_kamar')
+        $order = Pesanan::join('yghotels','yghotels.id','=','pesanans.id_kamar')->orderByDesc('id')
         ->get(['pesanans.*','yghotels.jenis_kamar','yghotels.nama_kamar','yghotels.harga']);
         
         return view('pesanan.index', compact('order'));
     }
 
-    public function createorder(){
-        return view('pesanan.create');
+    public function tampilkamar(Yghotel $room){
+        return view('pesanan.create', compact('room')) ;
     }
 
     public function storeorder(Request $request){
@@ -37,5 +37,26 @@ class PesananController extends Controller
     public function vieworder(){
         $room = Yghotel::all();
         return view('pesanan.view', compact('room'));
+    }
+
+    public function viewwelcome(){
+        $room = Yghotel::all();
+        return view('welcome', compact('room'));
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $order = Pesanan::join('yghotels','yghotels.id','=','pesanans.id_kamar')
+        ->where('id_pelanggan', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('pesanan.index', compact('order'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function searchadmin(Request $request)
+    {
+        $keyword = $request->search;
+        $order = Pesanan::join('yghotels','yghotels.id','=','pesanans.id_kamar')
+        ->where('id_pelanggan', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('admin.index', compact('order'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

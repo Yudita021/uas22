@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/', 'App\Http\Controllers\PesananController@viewwelcome');
 
 // CRUD KAMAR HOTEL
 Route::get('/admin', 'App\Http\Controllers\PesananController@indexpesanan');
@@ -31,7 +31,11 @@ Route::patch('admin/kamar/update/{room}', 'App\Http\Controllers\YghotelControlle
 Route::delete('admin/kamar/delete/{room}', 'App\Http\Controllers\YghotelController@destroy')->name('kamar.remove');
 
 // PEMESANAN
-Route::get('/order/create', 'App\Http\Controllers\PesananController@createorder')->name('order.create');
+Route::get('order/edit/{room}','App\Http\Controllers\PesananController@tampilkamar')->name('edit.edit');
 Route::post('order/store','App\Http\Controllers\PesananController@storeorder')->name('order.store');
+// Route::get('/order/create', 'App\Http\Controllers\PesananController@createorder')->name('order.create');
+// Route::post('order/store','App\Http\Controllers\PesananController@storeorder')->name('order.store');
 Route::get('/order', 'App\Http\Controllers\PesananController@vieworder');
 Route::get('/order/view', 'App\Http\Controllers\PesananController@indexorder');
+Route::get('/order/view/search', 'App\Http\Controllers\PesananController@search')->name('search');
+Route::get('/admin/search', 'App\Http\Controllers\PesananController@searchadmin')->name('search.admin');

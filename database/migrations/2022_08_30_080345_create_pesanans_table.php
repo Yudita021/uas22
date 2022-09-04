@@ -20,13 +20,13 @@ class CreatePesanansTable extends Migration
             $table->date('checkout');
             $table->integer('jumlah_kamar');
             $table->integer('jumlah_orang');
-            $table->integer('total_harga');
             $table->string('pesan');
             $table->string('id_pelanggan');
             $table->string('nama', 50);
             $table->string('no_hp', 20);
             $table->string('email', 50);
             $table->text('alamat');
+            $table->string('status',10);
             $table->timestamps();
         });
         
