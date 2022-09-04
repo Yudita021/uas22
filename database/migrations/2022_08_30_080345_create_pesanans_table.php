@@ -32,7 +32,7 @@ class CreatePesanansTable extends Migration
         
         Schema::table('pesanans', function (Blueprint $table) {
             $table->foreign('id_kamar')
-            ->references('id_kamar')
+            ->references('id')
             ->on('yghotels')
             ->onDelete('cascade');              
             $table->dropForeign(['id_kamar']);

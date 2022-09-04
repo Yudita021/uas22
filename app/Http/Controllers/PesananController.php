@@ -9,14 +9,14 @@ class PesananController extends Controller
 {
     public function indexpesanan(){
         $order = Pesanan::join('yghotels','yghotels.id','=','pesanans.id_kamar')
-        ->get(['pesanans.*','yghotels.jenis_kamar']);
+        ->get(['pesanans.*','yghotels.jenis_kamar','yghotels.nama_kamar','yghotels.harga']);
         
         return view('admin.index', compact('order'));
     }
 
     public function indexorder(){
         $order = Pesanan::join('yghotels','yghotels.id','=','pesanans.id_kamar')
-        ->get(['pesanans.*','yghotels.jenis_kamar','yghotels.nama_kamar'], 'yghotels.total_harga');
+        ->get(['pesanans.*','yghotels.jenis_kamar','yghotels.nama_kamar','yghotels.harga']);
         
         return view('pesanan.index', compact('order'));
     }

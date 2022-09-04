@@ -13,21 +13,24 @@
         <div class="container">
             <div class="class-header">           
            
-                <div class="card-body">
-                    <table class="table table-bordered">
-                        <tr class="text-center">
+                <div class="card-body table-responsive ">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr class="text-center table-dark">
                             <th>No</th>
                             <th>Id Pelanggan</th>
                             <th>Nama Pelanggan</th>
-                            <th>Jumlah Pesan</th>
-                            <th>Jenis Kamar</th>
-                            <th>Nama Kamar</th>
+                            <th>Jenis</th>
+                            <th>Kamar</th>
+                            <th>Jumlah</th>
                             <th>Checkin</th>
-                            <th>Total Hari</th>
+                            <th>Checkout</th>
+                            <th>Hari</th>
                             <th>Total Harga</th>
                             <th>Status</th>
                             
                         </tr>
+                    </thead>
                         <tbody>
                             @foreach ($order as $book)
                                 
@@ -36,10 +39,11 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{ $book->id_pelanggan }}</td>
                                 <td>{{ $book->nama }}</td>
-                                <td>{{ $book->jumlah_kamar }}</td>
                                 <td>{{ $book->jenis_kamar }}</td>
                                 <td>{{ $book->nama_kamar }}</td>
+                                <td>{{ $book->jumlah_kamar }}</td>
                                 <td>{{ $book->checkin }}</td>
+                                <td>{{ $book->checkout }}</td>
 
                                 {{-- Untuk menampilkan JUmlah HAri --}}
                                 <td>@php
@@ -51,7 +55,16 @@
                                     $days = $interval->format('%a');
                                     echo $days;
                                 @endphp</td>
-                                <td>{{ $book->total_harga }}</td>
+                                <td>
+                                @php
+                                    $int1 = $days;
+                                    $int2 = $book->harga;
+                                    $int3 = $book->jumlah_kamar;
+                                    $sum = $int1 * $int2 * $int3;
+                                    
+                                @endphp 
+                                @currency($sum)   
+                                </td>
                                 <td></td>
                                 
                                 {{-- <td>{{ $book->jstatus }}</td> --}}

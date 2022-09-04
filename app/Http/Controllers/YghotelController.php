@@ -16,15 +16,20 @@ class YghotelController extends Controller
     }
 
     public function storekamar(Request $request){
-        $request->validate([
+        $validatedData = $request->validate([
             'jenis_kamar'=>'required',
             'nama_kamar'=>'required',
             'jumlah_kamar'=>'required',
             'kapasitas'=>'required',
             'harga'=>'required',
+            'image'=>'image',
             'keterangan'=>'required'
         ]);
-        Yghotel::create($request->all());
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+        
+        Yghotel::create($validatedData);
         return redirect('admin/kamar');
     }
 

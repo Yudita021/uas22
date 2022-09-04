@@ -24,41 +24,50 @@
             <div class="container">
                 <div class="class-header">           
                
-                    <div class="card-body">
-                        <form action="{{route('kamar.store')}}" method="post">
+                    <div class="card-body responsive">
+                        <form action="{{route('kamar.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group">
+                            <div class="form-group mb-2 col-4">
                                 <label for="">Jenis Kamar</label>
-                                <input type="text" name="jenis_kamar" class="form-control">
+                                <select class="form-control" id="sel1" name="jenis_kamar" required>
+                                    <option value="">--- PILIH ---</option>
+                                    <option value="VVIP">VVIP</option>
+                                    <option value="VIP">VIP</option>
+                                    <option value="REGULER">REGULER</option>
+                                  </select>
+                                
                             </div>
     
-                            <div class="form-group">
+                            <div class="form-group mb-2 col-10">
                                 <label for="">Nama Kamar</label>
-                                <input type="text" name="nama_kamar" class="form-control" value="{{ old('nama_kamar') }}">
+                                <input required type="text" name="nama_kamar" class="form-control" value="{{ old('nama_kamar') }}">
                             </div>
     
-                            <div class="form-group">
-                                <label for="">Jumlah Kamar</label>
-                                <input type="text" name="jumlah_kamar" class="form-control" value="{{ old('jumlah_kamar') }}">
+                            <div class="form-group mb-2 col-4">
+                                <label for="">Jumlah</label>
+                                <input required type="number" name="jumlah_kamar" class="form-control" value="{{ old('jumlah_kamar') }}">
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group mb-2 col-4">
                                 <label for="">Kapasitas</label>
-                                <input type="text" name="kapasitas" class="form-control" value="{{ old('kapasitas') }}">
+                                <input required type="number" name="kapasitas" class="form-control" value="{{ old('kapasitas') }}">
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group mb-2 col-4">
                                 <label for="">Harga</label>
-                                <input type="text" name="harga" class="form-control" value="{{ old('harga') }}">
+                                <input required type="number" name="harga" class="form-control" value="{{ old('harga') }}">
                             </div>
-    
-                            <div class="form-group">
+                            <div class="mb-2 mt-3 col-3">
+                                <label for="formFile" class="form-label">Gambar Kamar</label>
+                                <input class="form-control" type="file" id="image" name="image">
+                              </div>
+                            <div class="form-group col-8 mb-3">
                                 <label for="">Keterangan</label>
-                                <textarea name="keterangan" id="" cols="30" rows="5" class="form-control">{{ old('keterangan') }}</textarea>
+                                <textarea required name="keterangan" id="" rows="3" class="form-control">{{ old('keterangan') }}</textarea>
                             </div>
     
-                            <button type="submit" name="submit" class="btn btn-lg btn-success">Submit <i class="fa-solid fa-file-circle-plus"></i></button>
-                            <a href="{{url('admin/kamar')}}" class="btn btn-lg btn-danger float-right"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+                            <button type="submit" name="submit" class="btn btn-m btn-success"><i class="fa-solid fa-file-circle-plus"></i> Submit Data </button>
+                            <a href="{{url('admin/kamar')}}" class="btn btn-m btn-danger float-right ms-4"> Batal</a>
                         </form>
 
                     </div>

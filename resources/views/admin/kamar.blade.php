@@ -13,9 +13,10 @@
         <div class="container">
             <div class="class-header">           
            
-                <div class="card-body">
-                    <table class="table table-bordered">
-                        <tr class="text-center">
+                <div class="card-body table-responsive ">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr class="text-center table-dark">
                             <th>No</th>
                             <th>Jenis Kamar</th>
                             <th>Nama Kamar</th>
@@ -25,6 +26,7 @@
                             <th>Keterangan</th>
                             <th>Aksi</th>
                         </tr>
+                    </thead>
                         <tbody>
                             @foreach ($room as $book)
                                 
@@ -35,7 +37,7 @@
                                 <td>{{ $book->nama_kamar}}</td>
                                 <td>{{ $book->jumlah_kamar }}</td>
                                 <td>{{ $book->kapasitas }}</td>
-                                <td>{{ $book->harga }}</td>
+                                <td>@currency($book->harga)</td>
                                 <td>{{ $book->keterangan }}</td>
                                 <td align="center">
                                 

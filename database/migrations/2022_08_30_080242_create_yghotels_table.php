@@ -14,12 +14,13 @@ class CreateYghotelsTable extends Migration
     public function up()
     {
         Schema::create('yghotels', function (Blueprint $table) {
-            $table->bigIncrements('id_kamar');
+            $table->bigIncrements('id');
             $table->string('jenis_kamar', 10);
             $table->string('nama_kamar',50);
             $table->integer('jumlah_kamar');
             $table->integer('kapasitas');
             $table->integer('harga');
+            $table->string('image');
             $table->text('keterangan');
             $table->timestamps();
         });
