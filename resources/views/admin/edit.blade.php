@@ -18,7 +18,7 @@
                     
                     
                    
-<form action="{{route('kamar.update', $room->id)}}" method="post">
+<form action="{{route('kamar.update', $room->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
 
@@ -34,7 +34,7 @@
 
     <div class="form-group">
         <label for="">Jumlah Kamar</label>
-        <input type="text" name="jumlah_kamar" class="form-control" value="{{ $room->jumlah_kamar }}">
+        <input type="text" name="stok" class="form-control" value="{{ $room->stok }}">
     </div>
 
     <div class="form-group">
@@ -46,6 +46,20 @@
         <label for="">Harga</label>
         <input type="text" name="harga" class="form-control" value="{{ $room->harga }}">
     </div>
+
+    <div class="mb-2 mt-3 col-3">
+        <label for="formFile" class="form-label">Gambar Kamar</label>
+<input type="hidden" name="oldImage" value="{{ $room->image }}">
+
+        @if($room->image)
+        <img src="{{ asset('storage/'.$room->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+        @else
+        <img class="img-preview img-fluid mb-3 col-sm-5">
+        @endif
+
+        
+        <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
+      </div>
 
     <div class="form-group">
         <label for="">Keterangan</label>
@@ -61,4 +75,21 @@
 </div>
 </div>
 </div>
+
+<script>
+    function previewImage(){
+    const image = document.querySelector('#image');
+    const imgPreview = document.querySelector('.img-preview');
+
+    imgPreview.style.display = 'block';
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+
+    oFReader.onload = function(oFREvent){
+        imgPreview.src = oFREvent.target.result;
+    }
+    }
+  
+</script>
 @endsection

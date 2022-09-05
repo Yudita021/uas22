@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\yghotel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class YghotelController extends Controller
 {
@@ -19,7 +20,7 @@ class YghotelController extends Controller
         $validatedData = $request->validate([
             'jenis_kamar'=>'required',
             'nama_kamar'=>'required',
-            'jumlah_kamar'=>'required',
+            'stok'=>'required',
             'kapasitas'=>'required',
             'harga'=>'required',
             'image'=>'image',
@@ -39,20 +40,33 @@ class YghotelController extends Controller
     
     public function updatekamar(Request $request, Yghotel $room)
     {
-        $room->replicate([
+        $validatedData = $request->validate([
             'jenis_kamar'=>'required',
             'nama_kamar'=>'required',
-            'jumlah_kamar'=>'required',
+            'stok'=>'required',
             'kapasitas'=>'required',
             'harga'=>'required',
+            'image'=>'image',
             'keterangan'=>'required'
         ]);
-        $room->update($request->all());
+
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+        
+        Yghotel::where('id', $room->id)
+        ->update($validatedData);
         return redirect('admin/kamar') ;
     }
 
     public function destroy(Yghotel $room)
     {
+        if($room->image){
+            Storage::delete($room->image);
+        }
         $room->delete();
         return redirect('admin/kamar');
     }

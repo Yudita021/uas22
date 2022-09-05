@@ -45,7 +45,7 @@
     
                             <div class="form-group mb-2 col-4">
                                 <label for="">Jumlah</label>
-                                <input required type="number" name="jumlah_kamar" class="form-control" value="{{ old('jumlah_kamar') }}">
+                                <input required type="number" name="stok" class="form-control" value="{{ old('stok') }}">
                             </div>
 
                             <div class="form-group mb-2 col-4">
@@ -57,10 +57,13 @@
                                 <label for="">Harga</label>
                                 <input required type="number" name="harga" class="form-control" value="{{ old('harga') }}">
                             </div>
+
                             <div class="mb-2 mt-3 col-3">
                                 <label for="formFile" class="form-label">Gambar Kamar</label>
-                                <input class="form-control" type="file" id="image" name="image">
+                                <img class="img-preview img-fluid mb-3 col-sm-5">
+                                <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
                               </div>
+
                             <div class="form-group col-8 mb-3">
                                 <label for="">Keterangan</label>
                                 <textarea required name="keterangan" id="" rows="3" class="form-control">{{ old('keterangan') }}</textarea>
@@ -76,5 +79,22 @@
         </div>
     </div>
     </div>
+
+<script>
+    function previewImage(){
+    const image = document.querySelector('#image');
+    const imgPreview = document.querySelector('.img-preview');
+
+    imgPreview.style.display = 'block';
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+
+    oFReader.onload = function(oFREvent){
+        imgPreview.src = oFREvent.target.result;
+    }
+    }
+  
+</script>
 
 @endsection

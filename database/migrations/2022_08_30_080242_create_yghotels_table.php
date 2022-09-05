@@ -17,10 +17,10 @@ class CreateYghotelsTable extends Migration
             $table->bigIncrements('id');
             $table->string('jenis_kamar', 10);
             $table->string('nama_kamar',50);
-            $table->integer('jumlah_kamar');
+            $table->integer('stok');
             $table->integer('kapasitas');
             $table->integer('harga');
-            $table->string('image');
+            $table->text('image');
             $table->text('keterangan');
             $table->timestamps();
         });

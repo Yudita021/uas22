@@ -20,7 +20,7 @@
                             <th>No</th>
                             <th>Jenis Kamar</th>
                             <th>Nama Kamar</th>
-                            <th>Jumlah Kamar</th>
+                            <th>Stok Kamar</th>
                             <th>Kapasitas</th>
                             <th>Harga</th>
                             <th>Keterangan</th>
@@ -35,7 +35,7 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{ $book->jenis_kamar }}</td>
                                 <td>{{ $book->nama_kamar}}</td>
-                                <td>{{ $book->jumlah_kamar }}</td>
+                                <td>{{ $book->stok }}</td>
                                 <td>{{ $book->kapasitas }}</td>
                                 <td>@currency($book->harga)</td>
                                 <td>{{ $book->keterangan }}</td>
