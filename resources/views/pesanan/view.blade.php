@@ -47,7 +47,7 @@
               <p class="card-description">
                 {{$kamar->keterangan}}
               </p>
-              <a href="{{ route('edit.edit', $kamar->id) }}" type="button" class="btn btn-sm btn-warning text-center"><i class="fa-solid fa-edit"></i></a>
+              <a href="{{ route('edit.edit', $kamar->id) }}" type="button" class="btn btn-m btn-warning text-center">Pesan Kamar</a>
             </div>
             
           </div>

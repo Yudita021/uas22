@@ -39,3 +39,6 @@ Route::get('/order', 'App\Http\Controllers\PesananController@vieworder');
 Route::get('/order/view', 'App\Http\Controllers\PesananController@indexorder');
 Route::get('/order/view/search', 'App\Http\Controllers\PesananController@search')->name('search');
 Route::get('/admin/search', 'App\Http\Controllers\PesananController@searchadmin')->name('search.admin');
+
+Route::get('admin/edit/{order}','App\Http\Controllers\PesananController@editpesanan')->name('pesanan.edit');
+Route::patch('admin/update/{order}', 'App\Http\Controllers\PesananController@updatepesanan')->name('pesanan.update');

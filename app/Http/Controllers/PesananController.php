@@ -59,4 +59,22 @@ class PesananController extends Controller
         ->where('id_pelanggan', 'like', "%" . $keyword . "%")->paginate(5);
         return view('admin.index', compact('order'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+
+
+
+    public function editpesanan(Pesanan $order){
+        return view('admin.validasi', compact('order')) ;
+    }
+    
+    public function updatepesanan(Request $request, Pesanan $order)
+    {
+    $request->validate([
+            'status'
+        ]);
+        
+        $order->update($request->all());
+        
+        return redirect('admin/') ;
+    }
 }

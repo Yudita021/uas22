@@ -116,7 +116,7 @@
                     <p class="lead">
                       YG Hotel terletak di pusat kota sekitar 10 menit dari Bandara Internasional, 5 menit dari stasiun kereta api, dan tiga jam berkendara dari Ibu Kota, dengan akses yang mudah ke pusat perbelanjaan dan kuliner.
                     </p>
-                   
+                    <a href="/order" type="submit" class="btn btn-lg btn-primary">PESAN HOTEL SEKARANG</a>
                   </div>
                 </div>
               </div>
@@ -497,6 +497,7 @@
             </div>
           </div>
           @endforeach
+          <a href="/order" type="submit" class="btn btn-lg btn-dark">KLIK UNTUK PESAN HOTEL</a>
              
             
         </div>

@@ -24,8 +24,12 @@
 
     <div class="form-group">
         <label for="">Jenis Kamar</label>
-        <input type="text" name="jenis_kamar" class="form-control" value="{{ $room->jenis_kamar }}" required>
-    </div>
+        <select class="form-control" id="sel1" name="jenis_kamar" required>
+            <option value="{{ $room->jenis_kamar }}">{{$room->jenis_kamar}}</option>
+            <option value="VVIP">VVIP</option>
+            <option value="VIP">VIP</option>
+            <option value="REGULER">REGULER</option>
+          </select>
 
     <div class="form-group">
         <label for="">Nama Kamar</label>
